@@ -1,0 +1,230 @@
+/* Importer les polices de caractères nécessaires */
+@import url('https://fonts.googleapis.com/css2?family=Obra+Lettra&display=swap');
+
+/* Arrière-plan dégradé violet et bleu nuit */
+body {
+   
+    background-color: #320073; /* Couleur violette proche du dégradé */
+    background-size: cover;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 160vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-blend-mode: overlay; /* Pour un effet harmonieux entre le dégradé et la texture */
+}
+
+/* Conteneur principal avec un effet de verre givré amélioré */
+.main-container {
+    width: 90%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 28px;
+    text-align: center;
+    z-index: 1;
+    animation: fadeIn 1s ease-out;
+}
+
+.main-container:hover {
+    transform: scale(1.02); /* Légère augmentation au survol */
+}
+
+/* Logo animé avec une transition plus fluide */
+.logo {
+    position: absolute;
+    top: -35px;
+    left: 10px;
+    width: 150px !important;
+    z-index: 2;
+    animation: logoBounce 3s ease-in-out infinite;
+}
+
+@keyframes logoBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Titre des énigmes avec effet scintillant amélioré */
+h1 {
+    font-family: 'Obra Lettra', sans-serif;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 255, 255, 0.5);
+    animation: glowAndFlicker 5s infinite alternate;
+    margin-bottom: 20px;
+}
+
+@keyframes glowAndFlicker {
+    0% {
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+    50% {
+        text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 255, 255, 0.6);
+    }
+    100% {
+        text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 255, 255, 0.5);
+    }
+}
+
+/* Style du compte à rebours avec effet lumineux dynamique */
+.countdown {
+    font-size: 1.5em !important;
+    margin: 10px 0;
+    padding: 50px;
+    color: #FFD700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.6), 0 0 30px rgba(255, 215, 0, 0.4);
+    animation: pulse-light 1.5s infinite; /* Vitesse d'animation augmentée */
+}
+
+/* Animation de lumière pulsée améliorée */
+@keyframes pulse-light {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 215, 0, 0.5), 0 0 10px rgba(255, 215, 0, 0.4), 0 0 15px rgba(255, 215, 0, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(255, 215, 0, 1), 0 0 30px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.6);
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(255, 215, 0, 0.5), 0 0 10px rgba(255, 215, 0, 0.4), 0 0 15px rgba(255, 215, 0, 0.3);
+    }
+}
+
+/* Pied de page */
+.footer-container {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+#legal-mentions-link {
+    position: relative;
+    bottom: -95px;
+    left: -120px;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.8em;
+    color: #ffffff;
+    text-decoration: none;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    transition: color 0.3s ease;
+}
+
+#legal-mentions-link:hover {
+    color: #FFD700;
+}
+
+#footer-text {
+    position: relative;
+    bottom: -65px !important;
+    left: 85%;
+    transform: translateX(-50%);
+    font-size: 0.8em;
+    color: #ffffff;
+    text-shadow: 1px 1px 0 #000000;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Styles du menu déroulant pour la traduction */
+#translate-dropdown {
+    position: fixed;
+    top: 15px;
+    right: 63px;
+    z-index: 9999;
+}
+
+.dropdown-btn {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 6px 15px;
+    font-size: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 6px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    width: 130px;
+    top: 50px;
+    right: 0;
+}
+
+.dropdown-content a {
+    color: #f0f0f0;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Affichage du menu au clic */
+#translate-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Amélioration de la réactivité */
+@media (max-width: 768px) {
+    body {
+        padding: 40px;
+    }
+    .logo {
+        width: 150px;
+    }
+
+    .countdown {
+        font-size: 1.2em;
+        padding: 30px;
+    }
+
+    #legal-mentions-link {
+        bottom: -80px;
+        left: -90px;
+    }
+
+    #footer-text {
+        bottom: -60px;
+        left: 75%;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 80px;
+    }
+
+    .countdown {
+        font-size: 1em;
+    }
+}

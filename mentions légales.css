@@ -1,0 +1,83 @@
+/* Importer les polices de caractères nécessaires */
+@import url('https://fonts.googleapis.com/css2?family=Obra+Lettra&display=swap');
+
+/* Arrière-plan dégradé violet et bleu nuit */
+body {
+    background: linear-gradient(to bottom, #0d0133, #1c0052, #320073, #4b008b);
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Garder la hauteur de la fenêtre */
+    overflow: hidden; /* Empêcher le défilement de la page */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style du logo, positionné en haut à droite de l'écran */
+.logo {
+    position: absolute;
+    top: 20px; /* Espacement du haut */
+    left: 20px; /* Espacement de gauche */
+    width: 120px; /* Taille du logo */
+    z-index: 2; /* Garder le logo au-dessus des autres éléments si nécessaire */
+}
+
+/* Conteneur principal (centré) */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Conteneur des mentions légales */
+.legal-container {
+    background-color: rgba(80, 0, 128, 0.6) ; /* Violette avec transparence légère */
+    padding: 20px;
+    width: 60%;
+    height: 80%; /* Limite la hauteur du conteneur */
+    overflow-y: auto; /* Ajoute une barre de défilement interne si le texte dépasse */
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.legal-container h1 {
+    font-size: 2em;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.legal-container h2 {
+    font-size: 1.5em;
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+.legal-container p, .legal-container ul {
+    font-size: 1em;
+    color: #ffffff;
+}
+
+.legal-container ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.legal-container ul li {
+    margin-bottom: 10px;
+}
+
+.legal-container a {
+    color: #ff99ff;
+    text-decoration: none;
+}
+
+.legal-container a:hover {
+    text-decoration: underline;
+}

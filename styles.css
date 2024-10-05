@@ -1,0 +1,385 @@
+/* Importer les polices de caractères */
+@import url('https://fonts.googleapis.com/css2?family=Obra+Lettra&family=Poppins:wght@300;400;600&display=swap');
+
+/* Arrière-plan dégradé violet et bleu nuit avec étoiles scintillantes */
+body {
+    background: linear-gradient(rgba(13, 1, 51, 0.8), rgba(75, 0, 139, 0.8)),
+    url('https://www.transparenttextures.com/patterns/diamond-eyes.png'),
+    radial-gradient(circle at top, #0d0133, #1c0052, #320073, #4b008b);
+    background-size: auto, 100px 100px, 50% 50%;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+   animation: subtleBackgroundMove 20s infinite alternate ease-in-out;
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 10% 10%; /* Déplacement subtil du fond pour l'effet de profondeur */
+    }
+
+ 
+}
+
+/* Conteneur principal avec effet de verre amélioré */
+.container {
+    width: 90%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    text-align: center;
+    z-index: 1;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Styles du menu déroulant pour la traduction */
+#translate-dropdown {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.dropdown-btn {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 4px 10px;
+    font-size: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 110px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05); /* Agrandir légèrement au survol */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    width: 110px;
+    top: 50px;
+    right: 0;
+}
+
+.dropdown-content a {
+    color: #f0f0f0;
+    padding: 8px 12px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Affichage du menu au clic */
+#translate-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Logo animé */
+.logo {
+    position: absolute;
+    top: -18px;
+    left: 10px;
+    width: 150px;
+    z-index: 2;
+    animation: logoBounce 3s ease-in-out infinite;
+}
+
+@keyframes logoBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Titre avec effets lumineux */
+h1 {
+    font-family: 'Obra Lettra', sans-serif;
+    font-size: 1.7em;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.4);
+    margin-bottom: 20px;
+    animation: glowAndFlicker 5s infinite alternate;
+}
+
+@keyframes subtleGlow {
+    from {
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+    to {
+        text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 255, 255, 0.5);
+    }
+}
+
+/* Boutons stylisés avec effet de lumière */
+button {
+    padding: 12px 24px;
+    font-size: 0.9em;
+    border: 2px solid #FFD700;
+    background-color: #E6B800;
+    color: #000000;
+    text-transform: uppercase;
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 8px;
+    width: calc(40% - 10px);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.6), inset 0 0 8px rgba(0, 0, 0, 0.3); /* Effet de profondeur supplémentaire */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #FFD700;
+    color: #ffffff;
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7), inset 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Style de la popup adapté au style général */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.3); /* Couleur plus claire avec transparence */
+    color: #FFD700; /* Texte couleur or */
+    padding: 20px 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px); /* Effet de flou plus fort pour un aspect givré */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5); /* Ombre légèrement adoucie */
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    z-index: 9999;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure subtile et légère */
+}
+
+/* Effet d'apparition douce */
+.popup.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.05); /* Légère mise en avant à l'apparition */
+}
+
+/* Animation lors de l'apparition */
+@keyframes fadeInPopup {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.95); /* Réduction légère pour l'effet de zoom */
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+  
+
+/* Bouton "Voir la solution" plus petit et discret */
+#solutionBtn {
+    border: 1px solid rgba(255, 215, 0, 0.3); /* Bordure plus claire */
+    background-color: transparent; /* Fond transparent */
+    color: rgba(255, 215, 0, 0.5); /* Couleur du texte atténuée */
+    font-size: 0.7em; /* Taille de la police réduite */
+    padding: 6px 12px; /* Padding réduit pour un bouton plus petit */
+    width: calc(30% - 10px); /* Largeur réduite */
+    opacity: 0.6; /* Opacité réduite pour le rendre moins visible */
+    transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+/* Pas d'effet hover trop visible pour "Voir la solution" */
+#solutionBtn:hover {
+    opacity: 0.8; /* Légèrement plus visible au survol */
+    color: rgba(255, 215, 0, 0.7); /* Couleur légèrement plus vive au survol */
+    background-color: transparent; /* Pas de fond visible au survol */
+}
+
+/* Bouton "Indice" reste inchangé */
+#hintBtn {
+    border: 1px solid rgba(255, 215, 0, 0.5);
+    background-color: transparent;
+    color: rgba(255, 215, 0, 0.7);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 0.8em;
+}
+
+#hintBtn:hover {
+    background-color: rgba(255, 215, 0, 0.2);
+    color: #FFD700;
+}
+
+/* Champ de réponse stylisé */
+input[type="text"] {
+    width: 80%;
+    padding: 12px;
+    margin: 20px 0;
+    border: none;
+    border-bottom: 2px solid #FFD700;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-color: #E6B800;
+}
+
+/* Style pour les flèches de navigation */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffffff;
+    font-size: 1.6em;
+    cursor: pointer;
+    user-select: none;
+    z-index: 1;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.arrow:hover {
+    color: #FFD700;
+    transform: scale(1.1);
+}
+
+.arrow-left {
+    left: 20px;
+}
+
+.arrow-right {
+    right: 20px;
+}
+
+/* Transition pour les énigmes */
+.enigme-container {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.enigme-hidden {
+    opacity: 0;
+}
+
+/* Animation fadeIn */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Pied de page amélioré */
+.footer-container {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 600px;
+    color: #ffffff;
+    font-size: 1em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#legal-mentions-link {
+    font-size: 0.8em;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#legal-mentions-link:hover {
+    text-decoration: underline;
+}
+
+#footer-text {
+    font-size: 0.8em;
+    color: #ffffff;
+}
+
+/* Mentions légales avec style moderne */
+.legal-container {
+    max-width: 90%;
+    margin: 10px auto;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-y: auto; /* Permettre le défilement */
+    max-height: 75vh; /* Limiter la hauteur pour permettre le défilement */
+}
+
+.legal-container h1 {
+    font-size: 2em;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.legal-container p, .legal-container ul {
+    font-size: 1em;
+    color: #ffffff;
+}
+
+/* Ajuster le défilement global */
+body {
+    overflow: hidden; /* Empêcher le défilement général de la page */
+}
+
+.container {
+    overflow-y: auto; /* Permettre le défilement uniquement dans le conteneur */
+    max-height: calc(100vh - 20px); /* Limite la hauteur pour permettre le défilement interne */
+}
+
+/* Nouvelles animations pour les messages de réponse */
+.animate-correct {
+    animation: bounce 0.5s;
+  }
+  
+  .animate-incorrect {
+    animation: shake 0.5s;
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-20px);}
+    60% {transform: translateY(-10px);}
+  }
+  
+  @keyframes shake {
+    0%, 100% {transform: translateX(0);}
+    10%, 30%, 50%, 70%, 90% {transform: translateX(-5px);}
+    20%, 40%, 60%, 80% {transform: translateX(5px);}
+  }

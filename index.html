@@ -1,0 +1,72 @@
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Puzzle Key</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Menu déroulant pour la traduction -->
+  <div id="translate-dropdown">
+    <button class="dropdown-btn" data-translate="currentLang">Français &#9662;</button>
+    <div class="dropdown-content">
+      <a href="#" data-lang="fr" class="active">Français</a>
+      <a href="#" data-lang="en">English</a>
+      <a href="#" data-lang="es">Español</a>
+      <a href="#" data-lang="it">Italiano</a>
+    </div>
+  </div>
+
+  <div class="logo-container">
+    <img src="./images/PUZZLE.png" alt="Logo Puzzle Key" class="logo">
+  </div>
+  <!-- Centrage du contenu principal -->
+  <div class="container">
+    <h1 id="enigme-title"></h1>
+    <p data-translate="verifyText">Vérifiez votre réponse !</p>
+    <input type="text" id="response" data-translate="placeholderResponse" placeholder="Réponse">
+
+    <div class="button-container"> 
+      <button id="validateBtn" data-translate="validateBtn">Valider</button>
+      <button id="hintBtn" data-translate="hintBtn">Indice</button>
+    </div>
+
+    <button id="solutionBtn" style="display: none;" data-translate="solutionBtn">Voir la solution</button>
+    <p id="hintText" style="display: none;"></p>
+    <p id="solutionText" style="display: none;"></p>
+    <p id="message" style="display: none;"></p>
+
+<div class="popup">
+  <p>Test</p>
+</div>
+
+    <!-- Flèches pour navigation -->
+    <div class="arrow arrow-left">&#10094;</div>
+    <div class="arrow arrow-right">&#10095;</div>
+  </div>
+
+  <!-- Lien vers les mentions légales centré avec pied de page -->
+  <div class="footer-container">
+    <a href="Mentions-légales.html" id="legal-mentions-link" data-translate="legalMentions">Mentions légales</a>
+    <div id="footer-text">Puzzle Key © 2024</div>
+  </div>
+  
+  <audio id="transitionSound">
+    <source src="sounds/transition-sound.wav" type="audio/wav">
+  </audio>
+  
+  <script src="translation.js"></script>
+  <script src="app.js"></script>
+
+    <!-- Lien vers les mentions légales centré avec pied de page -->
+  <a href="test de connexion.html"></a>
+
+  
+    <!-- Lien vers les mentions légales centré avec pied de page -->
+  <a href="test des pensées.html"></a>
+
+  <!-- Lien vers les mentions légales centré avec pied de page -->
+  <a href="rêves et souvenirs.html"></a>
+
+</body>
+</html>
