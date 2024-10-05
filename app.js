@@ -269,10 +269,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const nextBtn = document.querySelector(".arrow-right");
   const dropdownBtn = document.querySelector(".dropdown-btn");
   const transitionSound = new Audio('transition-sound.mp3');
-  const hintSolutionSound = new Audio('sounds/transition-sound1.mp3');
-  const incorrectSound = new Audio('sounds/transition-sound2.mp3');
-  const correctSound = new Audio('sounds/transition-sound3.mp3');
-  const languageChangeSound = new Audio('sounds/transition-sound4.mp3');
+  const hintSolutionSound = new Audio('transition-sound1.mp3');
+  const incorrectSound = new Audio('transition-sound2.mp3');
+  const correctSound = new Audio('transition-sound3.mp3');
+  const languageChangeSound = new Audio('transition-sound4.mp3');
 
   let hintUsed = false;
 
