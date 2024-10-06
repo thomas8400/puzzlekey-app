@@ -10,7 +10,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    height: 138vh;
+    height: 150vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -40,7 +40,7 @@ body {
 /* Logo animé avec une transition plus fluide */
 .logo {
     position: absolute;
-    top: -35px;
+    top: -21px;
     left: 10px;
     width: 150px !important;
     z-index: 2;
