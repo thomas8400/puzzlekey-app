@@ -40,7 +40,7 @@ body {
 /* Logo animé avec une transition plus fluide */
 .logo {
     position: absolute;
-    top: -21px;
+    top: -35px;
     left: 10px;
     width: 150px !important;
     z-index: 2;
