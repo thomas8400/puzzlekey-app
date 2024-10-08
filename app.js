@@ -142,8 +142,8 @@ document.addEventListener("DOMContentLoaded", () => {
       title: {
         fr: "La salle de la symbiose et des lettres cachées",
         en: "Reconstruction of the Secret Word",
-        es: "Reconstrucción de la Palabra Secreta",
-        it: "Ricostruzione della Parola Segreta"
+        es: "La sala de la simbiosis y las letras escondidas",
+        it: "La sala della simbiosi e le lettere nascoste"
       },
       correctAnswers: {
         fr: "Partage",
