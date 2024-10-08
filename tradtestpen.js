@@ -63,7 +63,7 @@ const translations = {
     },
     es: {
       currentLang: "Español &#9662;",
-      pageTitle: "Prueba de pensamientos",
+      pageTitle: "La Prueba de los pensamientos",
       countdown: "Time : 2:00",
       question1: "Encuentras una llave dorada misteriosa, ¿ A dónde crees que conduce ?",
       q1option1: "A un cofre del tesoro",
@@ -94,7 +94,7 @@ const translations = {
     },
     it: {
       currentLang: "Italiano &#9662;",
-      pageTitle: "Test dei pensieri",
+      pageTitle: "Il test dei pensieri",
       countdown: "Time : 2:00",
       question1: "Trovi una chiave d'oro misteriosa, dove pensi che conduca ?",
       q1option1: "A un forziere",
