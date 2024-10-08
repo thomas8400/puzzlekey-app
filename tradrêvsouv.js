@@ -35,7 +35,7 @@ const translations = {
     },
     es: {
       currentLang: "Español &#9662;",
-      pageTitle: "LA HABITACIÓN DE LOS SUEÑOS Y RECUERDOS",
+      pageTitle: "LA SALA DE LOS SUEÑOS Y RECUERDOS",
       countdownText: "Time : 2:00",
       question1: "Fragmentos de recuerdos :",
       action1: "<em>Acción a realizar :</em> Cada uno debe escribir tres recuerdos que destaquen en su relación",
