@@ -35,7 +35,7 @@ const translations = {
     },
     es: {
       currentLang: "Español &#9662;",
-      pageTitle: "LA SALA DE LOS SUEÑOS Y RECUERDOS",
+      pageTitle: "SALA DE LOS SUEÑOS Y RECUERDOS",
       countdownText: "Time : 2:00",
       question1: "Fragmentos de recuerdos :",
       action1: "<em>Acción a realizar :</em> Cada uno debe escribir tres recuerdos que destaquen en su relación",
@@ -52,7 +52,7 @@ const translations = {
     },
     it: {
       currentLang: "Italiano &#9662;",
-      pageTitle: "LA STANZA DEI SOGNI E DEI RICORDI",
+      pageTitle: "STANZA DEI SOGNI E DEI RICORDI",
       countdownText: "Time : 2:00",
       question1: "Frammenti di ricordi :",
       action1: "<em>Azione da svolgere:</em> Ognuno di voi deve scrivere tre ricordi che spiccano nella vostra relazione",
