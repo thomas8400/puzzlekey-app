@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
       correctAnswers: {
         fr: "Partage",
         en: "Share",
-        es: "Compartir",
+        es: "Comparta",
         it: "Condivisione"
       },
       hint: {
@@ -244,7 +244,7 @@ document.addEventListener("DOMContentLoaded", () => {
       verifyText: "Verifica la tua risposta !",
       placeholderResponse: "Risposta",
       validateBtn: "Conferma",
-      hintBtn: "Suggerimento",
+      hintBtn: "indizio",
       solutionBtn: "Vedi soluzione",
       legalMentions: "Menzioni legali",
       correctMessage: "Bravo ! Hai trovato la risposta corretta",
