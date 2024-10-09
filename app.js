@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       title: {
         fr: "La salle de la symbiose et des lettres cachées",
-        en: "symbiosis and hidden letters room",
+        en: "Symbiosis and hidden letters room",
         es: "Sala de la simbiosis y las letras escondidas",
         it: "Sala della simbiosi e delle lettere nascoste"
       },
