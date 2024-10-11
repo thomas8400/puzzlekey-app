@@ -2,7 +2,7 @@ const translations = {
     fr: {
       currentLang: "Français &#9662;",
       pageTitle: "CHAMBRE DES RÊVES ET DES SOUVENIRS",
-      countdownText: "Time : 2:00",
+      countdownText: "Time : 3:00",
       question1: "Fragments de souvenirs :",
       action1: "<em>Action à réaliser :</em> Chacun de vous doit écrire trois souvenirs marquants de votre relation.",
       question2: "Moments Présents :",
@@ -19,7 +19,7 @@ const translations = {
     en: {
       currentLang: "English &#9662;",
       pageTitle: "THE ROOM OF DREAMS AND MEMORIES",
-      countdownText: "Time : 2:00",
+      countdownText: "Time : 3:00",
       question1: "Fragments of memories :",
       action1: "<em>Action to perform:</em> Each of you must write three significant memories of your relationship.",
       question2: "Present Moments :",
@@ -36,7 +36,7 @@ const translations = {
     es: {
       currentLang: "Español &#9662;",
       pageTitle: "SALA DE LOS SUEÑOS Y RECUERDOS",
-      countdownText: "Time : 2:00",
+      countdownText: "Time : 3:00",
       question1: "Fragmentos de recuerdos :",
       action1: "<em>Acción a realizar :</em> Cada uno debe escribir tres recuerdos que destaquen en su relación",
       question2: "Momentos presentes :",
@@ -53,7 +53,7 @@ const translations = {
     it: {
       currentLang: "Italiano &#9662;",
       pageTitle: "STANZA DEI SOGNI E DEI RICORDI",
-      countdownText: "Time : 2:00",
+      countdownText: "Time : 3:00",
       question1: "Frammenti di ricordi :",
       action1: "<em>Azione da svolgere:</em> Ognuno di voi deve scrivere tre ricordi che spiccano nella vostra relazione",
       question2: "Momenti presenti :",
