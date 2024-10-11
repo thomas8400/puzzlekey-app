@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
         editorTitle: "Éditeur",
         section3: "Le présent site, accessible à l'URL https://puzzlekey-games.com, est édité par :",
         address: "Adresse : 538 rue du petit loire, 17450 Saint laurent de la prée",
-        email: "Email : contact@puzzlekey-games.com",
+        email: "Email : contact@puzzlekey-games.co",
         siret: "Numéro SIRET : 90425782100010",
         hostingerTitle: "Hébergement",
         section4: "Le site est hébergé par :",
