@@ -44,24 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
         it: "23358 (vedi p. 69)"
       },
       hasHint: false
-
-      
-    },
-    {
-      title: {
-        fr: "Test de connexion",
-        en: "Connection Test",
-        es: "Prueba de conexión",
-        it: "Test di connessione"
-      },
-      isRedirect: true,
-      redirectUrl: 'test de connexion.html',
-      buttonText: {
-        fr: "Accéder au test",
-        en: "Access the test",
-        es: "Acceder a la prueba",
-        it: "Accedi al test"
-      }
     },
     {
       title: {
@@ -114,22 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       title: {
-        fr: "Test des pensées",
-        en: "Thoughts test",
-        es: "Prueba de pensamientos",
-        it: "Test di pensieri"
-      },
-      isRedirect: true,
-      redirectUrl: 'test des pensées.html',
-      buttonText: {
-        fr: "Accéder au test",
-        en: "Access the test",
-        es: "Acceder a la prueba",
-        it: "Accedi al test"
-      }
-    },
-    {
-      title: {
         fr: "La serre des merveilles",
         en: "The Greenhouse of Wonders",
         es: "El Invernadero de las Maravillas",
@@ -171,22 +137,6 @@ document.addEventListener("DOMContentLoaded", () => {
         it: "VENI VIDI VICI ALESIA LII (vedi p. 77)"
       },
       hasHint: true
-    },
-    {
-      title: {
-        fr: "Chambre des rêves et souvenirs",
-        en: "Dreams and memories",
-        es: "Sueños y recuerdos",
-        it: "sogni e ricordi"
-      },
-      isRedirect: true,
-      redirectUrl: 'rêves et souvenirs.html',
-      buttonText: {
-        fr: "Accéder au test",
-        en: "Access the test",
-        es: "Acceder a la prueba",
-        it: "Accedi al test"
-      }
     },
     {
       title: {
@@ -318,7 +268,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const prevBtn = document.querySelector(".arrow-left");
   const nextBtn = document.querySelector(".arrow-right");
   const dropdownBtn = document.querySelector(".dropdown-btn");
-  const verifyText = document.querySelector("[data-translate='verify-text']");
   const transitionSound = new Audio('sounds/transition-sound.mp3');
   const hintSolutionSound = new Audio('sounds/transition-sound1.mp3');
   const incorrectSound = new Audio('sounds/transition-sound2.mp3');
@@ -340,193 +289,124 @@ document.addEventListener("DOMContentLoaded", () => {
   function loadEnigme(index) {
     const enigme = enigmes[index];
 
-    
-    // Reset all elements first
+    enigmeTitle.textContent = enigme.title[currentLanguage];
+    hintText.textContent = enigme.hint[currentLanguage];
+    solutionText.textContent = enigme.solution[currentLanguage];
+
     responseInput.value = "";
     hintText.style.display = "none";
     solutionText.style.display = "none";
     messageElement.style.display = "none";
     hintUsed = false;
 
-    // Toujours mettre à jour le titre
-    enigmeTitle.textContent = enigme.title[currentLanguage];
-    
-    // Mettre à jour la navigation - AVANT de gérer le type d'énigme
-    updateNavigation(index);
-    
-    if (enigme.isRedirect) {
-        handleRedirectEnigme(enigme);
+    if (enigme.hasHint) {
+      hintBtn.style.display = "inline-block";
+      solutionBtn.style.display = "none";
+      hintBtn.disabled = false;
     } else {
-        handleRegularEnigme(enigme);
+      hintBtn.style.display = "none";
+      solutionBtn.style.display = "inline-block";
     }
 
     updateTextWithTranslations();
-}
-validateBtn.addEventListener("click", () => {
-  const userResponse = responseInput.value.trim().toLowerCase();
-  const currentEnigme = enigmes[currentEnigmeIndex];
-
-  let isCorrect = false;
-
-  if (Array.isArray(currentEnigme.correctAnswers)) {
-    isCorrect = currentEnigme.correctAnswers.some(answer => 
-      userResponse === answer.toLowerCase()
-    );
-  } else if (typeof currentEnigme.correctAnswers === "object") {
-    isCorrect = userResponse === currentEnigme.correctAnswers[currentLanguage].toLowerCase();
-  } else {
-    isCorrect = userResponse === currentEnigme.correctAnswers.toLowerCase();
   }
 
-  if (isCorrect) {
-    messageElement.style.display = "block";
-    messageElement.style.color = "green";
-    messageElement.textContent = translations[currentLanguage].correctMessage;
-    correctSound.play();
-    animateMessage(messageElement, 'correct');
-  } else {
-    messageElement.style.display = "block";
-    messageElement.style.color = "red";
-    messageElement.textContent = translations[currentLanguage].incorrectMessage;
-    incorrectSound.play();
-    animateMessage(messageElement, 'incorrect');
-  }
-});
+  validateBtn.addEventListener("click", () => {
+    const userResponse = responseInput.value.trim().toLowerCase();
+    const currentEnigme = enigmes[currentEnigmeIndex];
 
-function showPopup(message) {
-  const popup = document.createElement('div');
-  popup.className = 'popup';
-  popup.textContent = message;
-  document.body.appendChild(popup);
+    let isCorrect = false;
 
-  setTimeout(() => {
-    popup.classList.add('show');
-  }, 10);
+    if (Array.isArray(currentEnigme.correctAnswers)) {
+      isCorrect = currentEnigme.correctAnswers.some(answer => 
+        userResponse === answer.toLowerCase()
+      );
+    } else if (typeof currentEnigme.correctAnswers === "object") {
+      isCorrect = userResponse === currentEnigme.correctAnswers[currentLanguage].toLowerCase();
+    } else {
+      isCorrect = userResponse === currentEnigme.correctAnswers.toLowerCase();
+    }
 
-  setTimeout(() => {
-    popup.classList.remove('show');
+    if (isCorrect) {
+      messageElement.style.display = "block";
+      messageElement.style.color = "green";
+      messageElement.textContent = translations[currentLanguage].correctMessage;
+      correctSound.play();
+      animateMessage(messageElement, 'correct');
+    } else {
+      messageElement.style.display = "block";
+      messageElement.style.color = "red";
+      messageElement.textContent = translations[currentLanguage].incorrectMessage;
+      incorrectSound.play();
+      animateMessage(messageElement, 'incorrect');
+    }
+  });
+
+  function showPopup(message) {
+    const popup = document.createElement('div');
+    popup.className = 'popup';
+    popup.textContent = message;
+    document.body.appendChild(popup);
+
     setTimeout(() => {
-      document.body.removeChild(popup);
-    }, 500);
-  }, 3000);
-}
-hintBtn.addEventListener("click", () => {
-  if (hintText.style.display === "block") {
-    hintText.style.display = "none";
-  } else {
-    hintText.style.display = "block";
-    playHintSolutionSound();
-    showPopup(translations[currentLanguage].hintPenalty);
+      popup.classList.add('show');
+    }, 10);
+
+    setTimeout(() => {
+      popup.classList.remove('show');
+      setTimeout(() => {
+        document.body.removeChild(popup);
+      }, 500);
+    }, 3000);
+  }
+
+  hintBtn.addEventListener("click", () => {
+    if (hintText.style.display === "block") {
+      hintText.style.display = "none";
+    } else {
+      hintText.style.display = "block";
+      playHintSolutionSound();
+      showPopup(translations[currentLanguage].hintPenalty);
+    }
+    
+    hintUsed = true;
+    solutionBtn.style.display = "inline-block";
+    hintBtn.disabled = false;
+  });
+  
+  solutionBtn.addEventListener("click", () => {
+    if (solutionText.style.display === "block") {
+      solutionText.style.display = "none";
+    } else {
+      solutionText.style.display = "block";
+      playHintSolutionSound();
+      showPopup(translations[currentLanguage].solutionPenalty);
+    }
+  });
+
+  function animateMessage(element, type) {
+    element.classList.remove('animate-correct', 'animate-incorrect');
+    void element.offsetWidth; // Force a reflow
+    element.classList.add(`animate-${type}`);
   }
   
-  hintUsed = true;
-  solutionBtn.style.display = "inline-block";
-  hintBtn.disabled = false;
-});
-
-solutionBtn.addEventListener("click", () => {
-  if (solutionText.style.display === "block") {
-    solutionText.style.display = "none";
-  } else {
-    solutionText.style.display = "block";
-    playHintSolutionSound();
-    showPopup(translations[currentLanguage].solutionPenalty);
-  }
-});
-function animateMessage(element, type) {
-  element.classList.remove('animate-correct', 'animate-incorrect');
-  void element.offsetWidth; // Force a reflow
-  element.classList.add(`animate-${type}`);
-}
-
-prevBtn.addEventListener("click", () => {
-  if (currentEnigmeIndex > 0) {
-    currentEnigmeIndex--;
-    loadEnigme(currentEnigmeIndex);
-    playTransitionSound();
-  }
-});
-
-nextBtn.addEventListener("click", () => {
-  if (currentEnigmeIndex < enigmes.length - 1) {
-    currentEnigmeIndex++;
-    loadEnigme(currentEnigmeIndex);
-    playTransitionSound();
-  }
-});
-
-function updateNavigation(index) {
-    // Afficher la flèche précédente si nous ne sommes pas à la première énigme
-    prevBtn.style.display = index > 0 ? "block" : "none";
-    
-    // Afficher la flèche suivante si nous ne sommes pas à la dernière énigme
-    // Important : vérifier par rapport à la longueur totale moins 1
-    nextBtn.style.display = index < (enigmes.length - 1) ? "block" : "none";
-    
-    // Debug - Afficher dans la console pour vérification
-    console.log('Current index:', index);
-    console.log('Total enigmes:', enigmes.length);
-    console.log('Should show next button:', index < (enigmes.length - 1));
-}
-
-function handleRedirectEnigme(enigme) {
-    // Cacher les éléments de l'énigme normale
-    responseInput.style.display = "none";
-    validateBtn.style.display = "none";
-    hintBtn.style.display = "none";
-    solutionBtn.style.display = "none";
-    hintText.style.display = "none";
-    solutionText.style.display = "none";
-    messageElement.style.display = "none";
-    verifyText.style.display = "none"; // Cache le texte de vérification
-   
-
-    // Gérer le bouton de redirection
-    let redirectButton = document.getElementById('redirectButton');
-    
-    if (!redirectButton) {
-        redirectButton = document.createElement('button');
-        redirectButton.id = 'redirectButton';
-        redirectButton.className = 'redirect-button';
-        redirectButton.addEventListener('click', () => {
-            playTransitionSound();
-            window.location.href = enigme.redirectUrl;
-        });
-        enigmeTitle.insertAdjacentElement('afterend', redirectButton);
+  prevBtn.addEventListener("click", () => {
+    if (currentEnigmeIndex > 0) {
+      currentEnigmeIndex--;
+      loadEnigme(currentEnigmeIndex);
+      playTransitionSound();
     }
-    
-    redirectButton.textContent = enigme.buttonText[currentLanguage];
-    redirectButton.style.display = "block";
-}
-
-function handleRegularEnigme(enigme) {
-    // Supprimer le bouton de redirection s'il existe
-    const redirectButton = document.getElementById('redirectButton');
-    if (redirectButton) {
-        redirectButton.remove();
+  });
+  
+  nextBtn.addEventListener("click", () => {
+    if (currentEnigmeIndex < enigmes.length - 1) {
+      currentEnigmeIndex++;
+      loadEnigme(currentEnigmeIndex);
+      playTransitionSound();
     }
-    
-    // Afficher les éléments de l'énigme normale
-    responseInput.style.display = "inline-block";
-    validateBtn.style.display = "inline-block";
-      verifyText.style.display = "block"; // Affiche le texte de vérifications
- 
-    
-    // Configurer le texte de l'indice et de la solution
-    hintText.textContent = enigme.hint[currentLanguage];
-    solutionText.textContent = enigme.solution[currentLanguage];
-
-    // Gérer l'affichage des boutons indice/solution
-    if (enigme.hasHint) {
-        hintBtn.style.display = "inline-block";
-        solutionBtn.style.display = "none";
-        hintBtn.disabled = false;
-    } else {
-        hintBtn.style.display = "none";
-        solutionBtn.style.display = "inline-block";
-    }
-}
- function changeLanguage(lang) {
+  });
+  
+  function changeLanguage(lang) {
     currentLanguage = lang;
     localStorage.setItem("language", lang);
     updateTextWithTranslations();
