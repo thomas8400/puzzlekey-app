@@ -526,8 +526,7 @@ function handleRegularEnigme(enigme) {
         solutionBtn.style.display = "inline-block";
     }
 }
-
-  function changeLanguage(lang) {
+ function changeLanguage(lang) {
     currentLanguage = lang;
     localStorage.setItem("language", lang);
     updateTextWithTranslations();
