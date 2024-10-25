@@ -43,9 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         es: "23358 (véase p.69)",
         it: "23358 (vedi p. 69)"
       },
-      hasHint: false
-
-      
+      hasHint: false    
     },
     {
       title: {
@@ -272,8 +270,6 @@ document.addEventListener("DOMContentLoaded", () => {
       hintPenalty: "5 minute penalty !",
       solutionPenalty: "10 minute penalty !"
 
-      
-   
     },
     es: {
       currentLang: "Español &#9662;",
