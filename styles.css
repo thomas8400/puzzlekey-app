@@ -280,6 +280,65 @@ input[type="text"]:focus {
     right: 20px;
 }
 
+/* Style pour le bouton de redirection */
+.redirect-button {
+    padding: 15px 30px;
+    font-size: 1.1em;
+    border: 2px solid #FFD700;
+    background: linear-gradient(145deg, #E6B800, #FFD700);
+    color: #000000;
+    text-transform: uppercase;
+    margin: 30px auto;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 12px;
+    width: calc(60% - 20px);
+    display: block;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3),
+                inset 0 0 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.redirect-button:hover {
+    background: linear-gradient(145deg, #FFD700, #FFC000);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 5px 20px rgba(255, 215, 0, 0.5),
+                inset 0 0 12px rgba(0, 0, 0, 0.3);
+    color: #000000;
+}
+
+.redirect-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+}
+
+/* Animation pour le bouton de redirection */
+.redirect-button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.1)
+    );
+    transform: rotate(45deg);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) rotate(45deg);
+    }
+}
+
 /* Transition pour les énigmes */
 .enigme-container {
     opacity: 1;
