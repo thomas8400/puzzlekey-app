@@ -314,7 +314,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const prevBtn = document.querySelector(".arrow-left");
   const nextBtn = document.querySelector(".arrow-right");
   const dropdownBtn = document.querySelector(".dropdown-btn");
-  const verifyText = document.querySelector("[data-translate='verify-text']");
+  const verifyText = document.querySelector("[data-translate='verifyText']");
   const transitionSound = new Audio('transition-sound.mp3');
   const hintSolutionSound = new Audio('transition-sound1.mp3');
   const incorrectSound = new Audio('transition-sound2.mp3');
