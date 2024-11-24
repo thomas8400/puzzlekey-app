@@ -172,9 +172,9 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       title: {
-        fr: "Chambre des rêves et souvenirs",
-        en: "Dreams and memories",
-        es: "Sueños y recuerdos",
+        fr: "La Chambre des rêves et des souvenirs",
+        en: "The room of dreams and memories",
+        es: "La sala de los sueños y recuerdos",
         it: "La stanza dei sogni e dei ricordi"
       },
       isRedirect: true,
@@ -189,8 +189,8 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       title: {
         fr: "La salle de la symbiose et des lettres cachées",
-        en: "Reconstruction of the Secret Word",
-        es: "Reconstrucción de la Palabra Secreta",
+        en: "The room of symbiosis and hidden letters",
+        es: "La SALA de la simbiosis y las letras escondidas",
         it: "La sala della simbiosi e delle lettere nascoste"
       },
       correctAnswers: {
