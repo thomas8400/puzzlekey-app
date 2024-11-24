@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
       title: {
         fr: "La salle de la symbiose et des lettres cachées",
         en: "The room of symbiosis and hidden letters",
-        es: "La SALA de la simbiosis y las letras escondidas",
+        es: "Sala de la simbiosis y las letras escondidas",
         it: "La sala della simbiosi e delle lettere nascoste"
       },
       correctAnswers: {
