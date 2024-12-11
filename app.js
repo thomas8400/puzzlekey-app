@@ -208,7 +208,7 @@ document.addEventListener("DOMContentLoaded", () => {
       solution: {
         fr: "PARTAGE (voir p.79)",
         en: "SHARE (see p.79)",
-        es: "COMPARTIR (véase p.79)",
+        es: "COMPARTA (véase p.79)",
         it: "CONDIVISIONE (vedi p. 79)"
       },
       hasHint: false
