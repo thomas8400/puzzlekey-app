@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
         es: "La morada de los Tic-Tac",
         it: "La dimora dei Tic-Tac"
       },
-      correctAnswers: ["10-2-8-20"],
+      correctAnswers: ["8-10-2-20"],
       hint: {
         fr: "Les aiguilles de la grande horloge semblent indiquer des directions",
         en: "The hands of the big clock seem to indicate directions",
@@ -16,10 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
         it: "Le lancette del grande orologio sembrano indicare direzioni"
       },
       solution: {
-        fr: "Le code secret est 10-2-8-20 (voir p.67)",
-        en: "The secret code is 10-2-8-20 (see p.67)",
-        es: "El código secreto es 10-2-8-20 (véase p.67)",
-        it: "Il codice segreto è 10-2-8-20 (vedi p. 67)"
+        fr: "Le code secret est 8-10-2-20 (voir p.67)",
+        en: "The secret code is 8-10-2-20 (see p.67)",
+        es: "El código secreto es 8-10-2-20 (véase p.67)",
+        it: "Il codice segreto è 8-10-2-20 (vedi p. 67)"
       },
       hasHint: true
     },
