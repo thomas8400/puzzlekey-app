@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
       title: {
         fr: "La demeure des Tic-Tac",
         en: "The Tic-Tac Residence",
-        es: "La morada de los Tic-Tac",
+        es: "La casa del Tic-Tac",
         it: "La dimora dei Tic-Tac"
       },
       correctAnswers: ["8-10-2-20"],
