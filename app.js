@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
       correctAnswers: {
         fr: "Partage",
         en: "Share",
-        es: "Compartir",
+        es: "Comparta",
         it: "Condivisione"
       },
       hint: {
